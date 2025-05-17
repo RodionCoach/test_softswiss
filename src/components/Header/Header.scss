@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1;
   background-color: var(--color-secondary);
   padding: 1rem 0;
 
@@ -17,11 +17,18 @@
 
   &__logo {
     display: block;
+    min-width: unset;
     
+    &:hover {
+      opacity: var(--opacity-hover);
+    }
+
     img {
       height: 40px;
       width: auto;
     }
+
+
   }
 
   &__nav-container {
@@ -40,13 +47,11 @@
     &-link {
       color: var(--color-text);
       text-decoration: none;
-      font-size: 1.1rem;
-      position: relative;
       padding: 0.5rem;
-      background: linear-gradient(to right, transparent 50%, var(--color-primary) 50%);
-      background-size: 200% 100%;
-      background-position: 0 0;
-      transition: background-position 0.3s ease;
+
+      &:hover {
+        opacity: var(--opacity-hover);
+      }
 
       span:hover {
         background: linear-gradient(var(--color-accent), var(--color-primary));
@@ -57,69 +62,94 @@
 
     @media (max-width: 768px) {
       display: none;
+      
+      &--open {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--color-secondary);
+        padding: 5rem 2rem 2rem;
+        
+        ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 2rem;
+        }
+      }
     }
   }
 
   &__cart {
-    display: flex;
-    width: 24px;
-    height: 24px;
-    align-items: center;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: all 0.3s ease;
+    min-width: unset;
 
-    &:hover {
-      fill: url(#cart_hover);
-      fill-opacity: var(--opacity-hover);
-      fill-rule: evenodd;
-      clip-rule: evenodd;
+    &-icon {
+      margin-top: 5px;
+      fill: var(--color-text);
+      transition: var(--transition-all);
+
+      .cart-path {
+        fill: var(--color-text);
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        .cart-path {
+          fill: url(#cart_hover);
+        }
+      }
     }
 
-    @media (max-width: 768px) {
-      display: none;
-    }
+    // #cart_hover{
+    //   stop:first-of-type{
+    //     stop-color: var(--color-accent);  
+    //   }
+    //   stop:last-of-type{
+    //     offset: 1;
+    //     stop-color: var(--color-primary);
+    //   }
+    // }
   }
 
   &__burger {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
     background: none;
     border: none;
-    padding: 0;
+    padding: 0.5rem;
     cursor: pointer;
+    min-width: unset;
+    z-index: 2;
 
-    span {
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: var(--color-text);
-      transition: var(--transition-transform);
+    .burger-line {
+      fill: var(--color-text);
+      transition: var(--transition-all);
+      transform-origin: center;
+    }
+
+    &:hover {
+      .burger-line {
+        opacity: var(--opacity-hover);
+      }
+    }
+
+    &--open {
+      .burger-line-1 {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .burger-line-2 {
+        opacity: 0;
+      }
+
+      .burger-line-3 {
+        transform: translateY(-8px) rotate(-45deg);
+      }
     }
 
     @media (max-width: 768px) {
-      display: flex;
-    }
-  }
-
-  @media (max-width: 768px) {
-    &__nav--open {
       display: block;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 80%;
-      height: 100vh;
-      background-color: var(--color-background);
-      padding: 2rem;
-
-      ul {
-        flex-direction: column;
-        align-items: center;
-      }
     }
   }
-} 
+}

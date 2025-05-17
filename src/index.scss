@@ -23,7 +23,8 @@
   --color-button-hover: rgba(255, 255, 255, 0.1);
   --opacity-hover: 0.6;
   --transition-transform: transform 0.3s ease;
-  --padding-container: 0 1rem;
+  --transition-all: var(--transition-all);
+  --padding-container: 0 1.5rem;
 }
 
 * {
@@ -47,7 +48,8 @@ button, a {
   min-width: 190px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  border-radius: 100px;
+  transition: var(--transition-all);
 
   &:hover {
     transform: translateY(-2px);

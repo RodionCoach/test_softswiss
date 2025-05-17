@@ -38,7 +38,6 @@
   }
 
   &__content {
-    z-index: 1;
     max-width: 600px;
 
     @media (max-width: 480px) {
@@ -71,7 +70,6 @@
     color: var(--color-background);
     border: none;
     padding: 1rem 2rem;
-    border-radius: 50px;
 
     &:hover{
       opacity: var(--opacity-hover);
