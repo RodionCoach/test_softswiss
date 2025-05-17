@@ -7,6 +7,7 @@ const offers = [
     id: 1,
     title: "Move the borders of reality!",
     description: "Go on a space adventure - it's possible with us!",
+    descriptionMobile: "Go on a space adventure",
     image: require("../../img/Rectangle_39613.png"),
   },
   {

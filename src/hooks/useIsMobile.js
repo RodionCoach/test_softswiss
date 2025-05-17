@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { MOBILE_BREAKPOINT } from "../constants";
+import { TABLET_BREAKPOINT } from "../constants";
 
-export const useIsMobile = (breakpoint = MOBILE_BREAKPOINT) => {
+export const useIsMobile = (breakpoint = TABLET_BREAKPOINT) => {
   const [isMobile, setIsMobile] = useState(undefined);
 
   useEffect(() => {

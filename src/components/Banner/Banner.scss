@@ -13,19 +13,16 @@
   @media (max-width: 992px) {
     background-position: center right -150px, center;
     background-repeat: no-repeat, no-repeat;
-    padding-top: 20px;
   }
 
   @media (max-width: 480px) {
     background-position: top -50px center, center;
     background-repeat: no-repeat, no-repeat;
-    padding-top: 20px;
   }
 
   &__container {
-    max-width: 1248px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: var(--padding-container);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,6 +33,7 @@
       justify-content: flex-end;
       text-align: center;
       padding-top: 2rem;
+      padding-bottom: 4rem;
     }
   }
 
@@ -73,7 +71,6 @@
     color: var(--color-background);
     border: none;
     padding: 1rem 2rem;
-    font-size: 1.1rem;
     border-radius: 50px;
 
     &:hover{

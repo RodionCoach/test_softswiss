@@ -3,15 +3,14 @@
   background-color: var(--color-background);
 
   &__container {
-    max-width: 1248px;
     min-height: 320px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: var(--padding-container);
     text-align: left;
   }
 
   &__title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: var(--color-text);
     margin-bottom: 2rem;
     text-align: left;
@@ -23,13 +22,12 @@
   }
 
   &__cta {
+    min-width: unset;
     background-color: transparent;
     color: var(--color-accent);
     border: none;
     padding: 1rem 0;
-    font-size: 1.1rem;
     border-radius: 50px;
-    font-family: 'Lato Bold', sans-serif;
     transition: all 0.3s ease;
     cursor: pointer;
 
