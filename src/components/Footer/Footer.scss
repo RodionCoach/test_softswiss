@@ -1,0 +1,41 @@
+.footer {
+  padding: 4rem 0 2rem;
+  background-color: var(--color-secondary);
+
+  &__container {
+    max-width: 1248px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__rocket {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    font-family: 'Lato Bold', sans-serif;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    padding: 3rem 0 1.5rem;
+
+    &__text {
+      font-size: 1.2rem;
+    }
+  }
+} 

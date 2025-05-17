@@ -1,0 +1,84 @@
+.banner {
+  min-height: 100vh;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  background-image:
+    url('../../img/earth.svg'),
+    url('../../img/Rectangle_39610.png');
+  background-position: center right calc(25% - 150px), center;
+  background-size: 500px auto, cover;
+  background-repeat: no-repeat, no-repeat;
+
+  @media (max-width: 992px) {
+    background-position: center right -150px, center;
+    background-repeat: no-repeat, no-repeat;
+    padding-top: 20px;
+  }
+
+  @media (max-width: 480px) {
+    background-position: top -50px center, center;
+    background-repeat: no-repeat, no-repeat;
+    padding-top: 20px;
+  }
+
+  &__container {
+    max-width: 1248px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 80px);
+
+    @media (max-width: 480px) {
+      align-items: center;
+      justify-content: flex-end;
+      text-align: center;
+      padding-top: 2rem;
+    }
+  }
+
+  &__content {
+    z-index: 1;
+    max-width: 600px;
+
+    @media (max-width: 480px) {
+      margin: 0 auto;
+      max-width: 500px;
+    }
+  }
+
+  &__title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+
+    span {
+      color: var(--color-primary);
+    }
+  }
+
+  &__subtitle {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    margin-bottom: 2rem;
+
+    span {
+      color: var(--color-accent);
+    }
+  }
+
+  &__cta {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+
+    &:hover{
+      opacity: var(--opacity-hover);
+    }
+  }
+
+}

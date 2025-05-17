@@ -1,0 +1,126 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--color-secondary);
+  padding: 1rem 0;
+
+  &__container {
+    max-width: 1248px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: block;
+    
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  &__nav-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    &-link {
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 1.1rem;
+      position: relative;
+      padding: 0.5rem;
+      background: linear-gradient(to right, transparent 50%, var(--color-primary) 50%);
+      background-size: 200% 100%;
+      background-position: 0 0;
+      transition: background-position 0.3s ease;
+
+      span:hover {
+        background: linear-gradient(var(--color-accent), var(--color-primary));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__cart {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    &:hover {
+      fill: url(#cart_hover);
+      fill-opacity: var(--opacity-hover);
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-text);
+      transition: transform 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__nav--open {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 80%;
+      height: 100vh;
+      background-color: var(--color-background);
+      padding: 2rem;
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+} 

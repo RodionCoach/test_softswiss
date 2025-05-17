@@ -1,0 +1,99 @@
+.offers {
+  padding: 4rem 0;
+  background-color: var(--color-background);
+
+  &__container {
+    max-width: 1248px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: var(--color-text);
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+}
+
+.offer-card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 100%;
+  min-height: 400px;
+  line-height: normal;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    .offer-card__image {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+
+  &__content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  &__title {
+    font-size: 40px;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    font-size: 24px;
+    font-family: 'Lato Bold', sans-serif;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  &__cta {
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    font-family: 'Lato Bold', sans-serif;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: var(--opacity-hover);
+    }
+  }
+
+  @media (max-width: 768px) {
+    min-height: 350px;
+  }
+} 
