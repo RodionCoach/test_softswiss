@@ -1,9 +1,8 @@
 .info {
-  padding: 4rem 0;
+  padding: var(--padding-section);
   background-color: var(--color-background);
 
   &__container {
-    min-height: 320px;
     margin: 0 auto;
     padding: var(--padding-container);
     text-align: left;
@@ -16,23 +15,69 @@
     text-align: left;
   }
 
-  &__text {
-    color: var(--color-text);
-    opacity: 0.9;
+  &__content {
+    position: relative;
+    overflow: hidden;
+    max-height: 100px;
+    transition: max-height 0.3s ease-out;
   }
 
-  &__cta {
-    min-width: unset;
-    background-color: transparent;
+  &__text {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: var(--color-text);
+    opacity: 0.9;
+    margin: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2rem;
+      background: linear-gradient(transparent, var(--color-background));
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  #info-toggle {
+    &:checked {
+      & ~ .info__toggle::before {
+        content: "Show less";
+      }
+    }
+
+    &:focus-visible + .info__toggle {
+      outline: var(--color-text) solid 1px;
+    }
+  }
+
+  &__container
+    .info__content:has(+ .info__toggle-wrapper #info-toggle:checked) {
+    max-height: 175px;
+    transition: max-height 0.5s ease-in;
+
+    .info__text::after {
+      height: 0;
+    }
+  }
+
+  &__toggle {
+    display: block;
+    cursor: pointer;
     color: var(--color-accent);
+    background: none;
     border: none;
     padding: 1rem 0;
-    border-radius: 50px;
-    transition: var(--transition-all);
-    cursor: pointer;
 
     &:hover {
       opacity: var(--opacity-hover);
+    }
+
+    &::before {
+      content: "Read more";
     }
   }
 
@@ -43,4 +88,4 @@
       font-size: 1.5rem;
     }
   }
-} 
+}

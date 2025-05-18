@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./Header.scss";
 import logo from "../../img/logo.svg";
+import "./Header.scss";
+import { Link, Button } from "../parts";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,37 +9,33 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__container">
-        <a
-          href="/"
-          className="header__logo no-hover-effect"
-          aria-label="Go to homepage"
-        >
-          <img src={logo} alt="Logo" />
+        <a href="/" className="header__logo " aria-label="Go to homepage">
+          <picture>
+            <source type="image/svg+xml" />
+            <img src={logo} alt="Logo" fetchPriority="high" />
+          </picture>
         </a>
 
         <div className="header__nav-container">
           <nav
             className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}
           >
-            <ul>
+            <ul className="header__nav-list">
               <li>
-                <a href="/" className="header__nav-link no-hover-effect">
+                <Link href="/" className="header__nav-link">
                   <span>Home</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/products"
-                  className="header__nav-link no-hover-effect"
-                >
+                <Link href="/products" className="header__nav-link">
                   Products
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/cart"
-                  className="header__nav-link header__cart no-hover-effect"
-                  aria-label="Shopping cart"
+                  className="header__nav-link header__cart"
+                  ariaLabel="Shopping cart"
                 >
                   <svg
                     className="header__cart-icon"
@@ -68,48 +65,24 @@ const Header = () => {
                       className="cart-path"
                     />
                   </svg>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
 
-          <button
-            className={`header__burger no-hover-effect ${
-              isMenuOpen ? "header__burger--open" : ""
-            }`}
+          <Button
+            variant="text"
+            noHoverEffect
+            className="header__burger-trigger"
+            aria-label="Burger menu button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                className="burger-line burger-line-1"
-                y="0"
-                width="24"
-                height="2"
-                rx="1"
-              />
-              <rect
-                className="burger-line burger-line-2"
-                y="8"
-                width="24"
-                height="2"
-                rx="1"
-              />
-              <rect
-                className="burger-line burger-line-3"
-                y="16"
-                width="24"
-                height="2"
-                rx="1"
-              />
-            </svg>
-          </button>
+            <span
+              className={`header__burger ${
+                isMenuOpen ? "header__burger--open" : ""
+              }`}
+            ></span>
+          </Button>
         </div>
       </div>
     </header>

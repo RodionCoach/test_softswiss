@@ -1,30 +1,31 @@
 @font-face {
-  font-family: 'Lato Bold';
-  src: url('../public/fonts/Lato-Bold.ttf') format('ttf');
+  font-family: "Lato Bold";
+  src: url("../public/fonts/Lato-Bold.ttf") format("ttf");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Lato Extra Bold';
-  src: url('../public/fonts/Lato-Bold.ttf') format('ttf');
+  font-family: "Lato Extra Bold";
+  src: url("../public/fonts/Lato-Bold.ttf") format("ttf");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --color-primary: #FF00FF;
+  --color-primary: #ff00ff;
   --color-secondary: #000000;
-  --color-accent: #FFFF00;
+  --color-accent: #ffff00;
   --color-background: #304571;
-  --color-text: #FFFFFF;
+  --color-text: #ffffff;
   --color-button-hover: rgba(255, 255, 255, 0.1);
   --opacity-hover: 0.6;
   --transition-transform: transform 0.3s ease;
-  --transition-all: var(--transition-all);
+  --transition-all: all 0.3s ease;
   --padding-container: 0 1.5rem;
+  --padding-section: 2rem 0;
 }
 
 * {
@@ -34,39 +35,19 @@
 }
 
 body {
-  font-family: 'Lato Bold', sans-serif;
+  font-family: "Lato Bold", sans-serif;
   background-color: var(--color-background);
   color: var(--color-text);
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato Extra Bold', sans-serif;
-}
-
-button, a {
-  min-width: 190px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 100px;
-  transition: var(--transition-all);
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(255, 0, 255, 0.3);
-  }
-
-  &.no-hover-effect {
-    &:hover {
-      transform: none;
-      box-shadow: none;
-    }
-  }
-
-  @media (max-width: 480px) {
-    min-width: 160px;
-    font-size: 1rem;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato Extra Bold", sans-serif;
 }
 
 .visually-hidden {
