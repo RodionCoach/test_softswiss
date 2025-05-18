@@ -3,9 +3,8 @@
   padding: 80px 0;
   position: relative;
   overflow: hidden;
-  background-image:
-    url('../../img/earth.svg'),
-    url('../../img/Rectangle_39610.png');
+  background-image: url("../../img/earth.svg"),
+    url("../../img/Rectangle_39610.webp");
   background-position: center right calc(25% - 150px), center;
   background-size: 500px auto, cover;
   background-repeat: no-repeat, no-repeat;
@@ -64,16 +63,4 @@
       color: var(--color-accent);
     }
   }
-
-  &__cta {
-    background-color: var(--color-accent);
-    color: var(--color-background);
-    border: none;
-    padding: 1rem 2rem;
-
-    &:hover{
-      opacity: var(--opacity-hover);
-    }
-  }
-
 }

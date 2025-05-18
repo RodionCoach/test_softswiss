@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../parts";
 import "./Banner.scss";
 
 const Banner = () => {
@@ -12,8 +13,9 @@ const Banner = () => {
           <p className="banner__subtitle">
             Where the possibilities are <span>endless!</span>
           </p>
-
-          <button className="banner__cta">Learn more</button>
+          <Button variant="primary" className="banner__button">
+            Learn more
+          </Button>
         </div>
       </div>
     </section>

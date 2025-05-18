@@ -1,0 +1,49 @@
+.input-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.input {
+  &--checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  &__label {
+    text-decoration: none;
+
+    &--checkbox {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: var(--color-secondary);
+      color: var(--color-text);
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: var(--color-secondary-hover);
+      }
+    }
+
+    &--text {
+      display: inline-block;
+      padding: 0;
+      color: var(--color-text);
+      font-size: 1rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: color 0.3s ease;
+      text-decoration: underline;
+      text-underline-offset: 0.3em;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
