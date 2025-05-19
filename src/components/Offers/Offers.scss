@@ -1,3 +1,5 @@
+@import "../../constants.scss";
+
 .offers {
   padding: var(--padding-section);
   background-color: var(--color-background);
@@ -20,11 +22,11 @@
     grid-template-rows: repeat(3, 1fr);
     gap: 2rem 2rem;
 
-    @media (max-width: 992px) {
+    @media (max-width: $breakpoint-tablet) {
       grid-template-rows: repeat(2, 1fr);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-mobile) {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(4, 1fr);
     }
@@ -77,7 +79,7 @@
     margin-bottom: 1rem;
     transition: font-size 0.3s ease;
 
-    @media (max-width: 992px) {
+    @media (max-width: $breakpoint-tablet) {
       font-size: 2rem;
     }
   }
@@ -101,7 +103,7 @@
     }
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: $breakpoint-tablet) {
     &:nth-child(1) {
       grid-column: 1 / span 1;
 
@@ -126,10 +128,18 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $breakpoint-mobile) {
     &:nth-child(1),
     &:nth-child(4) {
       grid-column: 1 / span 1;
+    }
+  }
+
+  &__cta {
+    min-width: var(--button-min-width-desktop);
+
+    @media (max-width: $breakpoint-mobile) {
+      min-width: var(--button-min-width-mobile);
     }
   }
 }

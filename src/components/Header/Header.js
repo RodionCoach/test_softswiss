@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../../img/logo.svg";
 import "./Header.scss";
 import { Link, Button } from "../parts";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const burgerButtonRef = useRef(null);
+  const navListRef = useRef(null);
+
+  useEffect(() => {
+    document.body.addEventListener("click", (e) => {
+      if (
+        e.target !== burgerButtonRef.current &&
+        e.target !== navListRef.current
+      ) {
+        setIsMenuOpen(false);
+      }
+    });
+
+    return () => {
+      document.body.removeEventListener("click", () => {});
+    };
+  }, []);
 
   return (
     <header className="header">
@@ -20,7 +37,7 @@ const Header = () => {
           <nav
             className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}
           >
-            <ul className="header__nav-list">
+            <ul ref={navListRef} className="header__nav-list">
               <li>
                 <Link href="/" className="header__nav-link">
                   <span>Home</span>
@@ -78,6 +95,7 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <span
+              ref={burgerButtonRef}
               className={`header__burger ${
                 isMenuOpen ? "header__burger--open" : ""
               }`}
