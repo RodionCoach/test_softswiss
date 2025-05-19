@@ -20,7 +20,7 @@
   &__content {
     position: relative;
     overflow: hidden;
-    max-height: 100px;
+    max-height: 6rem;
     transition: max-height 0.3s ease-out;
   }
 
@@ -58,7 +58,7 @@
 
   &__container
     .info__content:has(+ .info__toggle-wrapper #info-toggle:checked) {
-    max-height: 175px;
+    max-height: 50vh;
     transition: max-height 0.5s ease-in;
 
     .info__text::after {
