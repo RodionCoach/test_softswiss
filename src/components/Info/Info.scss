@@ -1,3 +1,5 @@
+@import "../../constants.scss";
+
 .info {
   padding: var(--padding-section);
   background-color: var(--color-background);
@@ -81,7 +83,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $breakpoint-tablet) {
     padding: 3rem 0;
 
     &__title {

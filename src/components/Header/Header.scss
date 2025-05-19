@@ -1,3 +1,5 @@
+@import "../../constants.scss";
+
 $rotate-burger: 45deg;
 $burger-cross: 11px;
 
@@ -62,7 +64,7 @@ $burger-cross: 11px;
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-tablet) {
       display: none;
 
       &--open {
@@ -110,7 +112,7 @@ $burger-cross: 11px;
     padding: none;
     z-index: 2;
 
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-tablet) {
       display: block;
     }
   }

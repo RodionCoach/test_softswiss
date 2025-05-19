@@ -1,3 +1,5 @@
+@import "../../constants.scss";
+
 .banner {
   min-height: 100vh;
   padding: 80px 0;
@@ -9,12 +11,16 @@
   background-size: 500px auto, cover;
   background-repeat: no-repeat, no-repeat;
 
-  @media (max-width: 992px) {
+  @media (max-width: $breakpoint-tablet) {
+    background-image: url("../../img/earth.svg"),
+      url("../../img/Rectangle_39610_tablet.webp");
     background-position: center right -150px, center;
     background-repeat: no-repeat, no-repeat;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-mobile) {
+    background-image: url("../../img/earth.svg"),
+      url("../../img/Rectangle_39610_mob.webp");
     background-position: top -50px center, center;
     background-repeat: no-repeat, no-repeat;
   }
@@ -27,7 +33,7 @@
     justify-content: center;
     height: calc(100vh - 80px);
 
-    @media (max-width: 480px) {
+    @media (max-width: $breakpoint-mobile) {
       align-items: center;
       justify-content: flex-end;
       text-align: center;
@@ -39,7 +45,7 @@
   &__content {
     max-width: 600px;
 
-    @media (max-width: 480px) {
+    @media (max-width: $breakpoint-mobile) {
       margin: 0 auto;
       max-width: 500px;
     }
@@ -61,6 +67,14 @@
 
     span {
       color: var(--color-accent);
+    }
+  }
+
+  &__button {
+    min-width: var(--button-min-width-desktop);
+
+    @media (max-width: $breakpoint-mobile) {
+      min-width: var(--button-min-width);
     }
   }
 }
